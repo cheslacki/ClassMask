@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demo</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <label>
+                <input id="event_number" type="text">
+            </label>
+        </form>
+        <script src="./../../dist/class-mask.min.js"></script>
+        <script>
+            function maskText(event) {
+                /*
+                 *  Any one of these parameters.
+                 *  number|stringToUpper|stringToName|email|date|phone
+                 *  cell|phoneAndCell|cpf|cnpj|cpfAndCnpj|zip
+                 *  money|fractionMedium|fractionFull
+                 */
+                event.target.value = event.target.value.classMask('number');
+            }
+
+            function load() {
+                document.getElementById('event_number').addEventListener('keyup', maskText, false);
+            }
+
+            document.addEventListener('DOMContentLoaded', load, false);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ClassMask</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cheslacki">
+        <meta name="description" content="Leonardo Cheslacki [restfulengine.com]">
+        <link media="all" type="text/css" rel="stylesheet" href="./../lib/bootstrap/bootstrap.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./../lib/codemirror/lib/codemirror.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./assets/css/app.min.css">
+    </head>
+    <body class="bg-light">
+        <div class="container">
+            <main>
+                <div class="py-5 text-center">
+                    <a href="mailto:contato@restfulengine.com.br" class="display-6"><span style="color: rgb(18, 101, 146);">REST</span><span style="color: rgb(168, 68, 68)">ful</span><span style="color: rgb(128, 128, 128);">Engine</span></a>
+                    <h2>Class Mask</h2>
+                    <p class="lead">Simple code to apply mask directly and cleanly, directly changes the "String.prototype".</p>
+                </div>
+                <div class="row pb-5">
+                    <div class="col-lg-12">
+                        <form class="sheet-content">
+                            <h4 class="mb-3">Mask number and string</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-4">
+                                    <label for="number" class="form-label">Number</label>
+                                    <input maxlength="10" class="form-control mask_number" placeholder="0-9" id="number" name="number" type="text">
+                                    <code class="text-muted">class="mask_number"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="string_upper" class="form-label">String upper</label>
+                                    <input maxlength="10" class="form-control mask_string_upper" placeholder="A-Z" id="string_upper" name="string_upper" type="text">
+                                    <code class="text-muted">class="mask_string_upper"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="string_capitalize" class="form-label">String capitalize</label>
+                                    <input maxlength="128" class="form-control mask_string_capitalize" placeholder="A-Z" id="string_capitalize" name="string_capitalize" type="text">
+                                    <code class="text-muted">class="mask_string_capitalize"</code>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Mask money and fraction</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-4">
+                                    <label for="money" class="form-label">Money</label>
+                                    <input maxlength="12" class="form-control mask_money" placeholder="1.000.000,00" id="money" name="money" type="text">
+                                    <code class="text-muted">class="mask_money"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="fraction_medium" class="form-label">Fraction medium</label>
+                                    <input maxlength="15" class="form-control mask_fraction_medium" placeholder="0,00001" id="fraction_medium" name="fraction_medium" type="text">
+                                    <code class="text-muted">class="mask_fraction_medium"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="fraction_full" class="form-label">Fraction full</label>
+                                    <input maxlength="20" class="form-control mask_fraction_full" placeholder="0,0000000001" id="fraction_full" name="fraction_full" type="text">
+                                    <code class="text-muted">class="mask_fraction_full"</code>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Mask phones</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-4">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input maxlength="13" class="form-control mask_phone" placeholder="(00)0000-0000" id="phone" name="phone" type="text">
+                                    <code class="text-muted">class="mask_phone"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="cell" class="form-label">Cell</label>
+                                    <input maxlength="14" class="form-control mask_cell" placeholder="(00)00000-0000" id="cell" name="cell" type="text">
+                                    <code class="text-muted">class="mask_cell"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="phones" class="form-label">Phones</label>
+                                    <input maxlength="14" class="form-control mask_phones" placeholder="(00)0000-0000 or (00)00000-0000" id="phones" name="phones" type="text">
+                                    <code class="text-muted">class="mask_phones"</code>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Mask documents</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-4">
+                                    <label for="cpf" class="form-label">CPF</label>
+                                    <input maxlength="14" class="form-control mask_cpf" placeholder="000.000.000-00" id="cpf" name="cpf" type="text">
+                                    <code class="text-muted">class="mask_cpf"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="cnpj" class="form-label">CNPJ</label>
+                                    <input maxlength="18" class="form-control mask_cnpj" placeholder="00.000.000/0000-00" id="cnpj" name="cnpj" type="text">
+                                    <code class="text-muted">class="mask_cnpj"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="phones" class="form-label">Document</label>
+                                    <input maxlength="18" class="form-control mask_document" placeholder="000.000.000-00 or 00.000.000/0000-00" id="document" name="document" type="text">
+                                    <code class="text-muted">class="mask_document"</code>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Mask zip, date and email</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-4">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input maxlength="128" class="form-control mask_email" placeholder="name@domain.com" id="email" name="email" type="text">
+                                    <code class="text-muted">class="mask_email"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input maxlength="10" class="form-control mask_date" placeholder="00/00/0000" id="date" name="date" type="text">
+                                    <code class="text-muted">class="mask_date"</code>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="zip" class="form-label">Zip</label>
+                                    <input maxlength="9" class="form-control mask_zip" placeholder="0000-000 or 00000-000" id="zip" name="zip" type="text">
+                                    <code class="text-muted">class="mask_zip"</code>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Bonus, note feedback maxlength</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-12 note">
+                                    <label for="note" class="form-label">Length characters</label>
+                                    <textarea maxlength="200" rows="3" class="form-control" placeholder="Write something..." id="note" name="note" cols="50"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <!-- Doc jQuery -->
+                    <div class="col">
+                        <h2>Basic Example</h2>
+                        <p class="lead">The simplest template to get started is the following.</p>
+                        <p class="lead">Everything you need to start is:</p>
+                        <ol>
+                            <li class="lead">Include <b>jQuery</b> and <b>Class Mask App</b> in your <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> code.</li>
+                            <li class="lead">Then add a class of your need.</li>
+                        </ol>
+                        <div id="doc_app"></div>
+                    </div>
+                    <!-- Doc App -->
+                    <div class="col">
+                        <p class="lead">Another way to do this:</p>
+                        <ol>
+                            <li class="lead">Include <b>jQuery</b> and <b>Class Mask</b> in your <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> code.</li>
+                            <li class="lead">Then add a jQuery event, call the <code>classMask</code> method to change the value.</li>
+                        </ol>
+                        <div id="doc_jquery"></div>
+                    </div>
+                    <!-- Doc Event -->
+                    <div class="col">
+                        <p class="lead">Or if you prefer:</p>
+                        <ol>
+                            <li class="lead">Include only <b>Class Mask</b> in your <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> code.</li>
+                            <li class="lead">Then add a listener.</li>
+                        </ol>
+                        <div id="doc_event"></div>
+                    </div>
+                    <!-- Doc Bonus -->
+                    <div class="col">
+                        <p class="lead">Bonus textarea:</p>
+                        <ol>
+                            <li class="lead">Include <b>jQuery</b> and <b>Class Mask App</b> in your <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> code.</li>
+                            <li class="lead">Then add a class called <code>note</code> in the textarea parent.</li>
+                            <li class="lead">Also add a class called <code>sheet-content</code> in the wrapper content.</li>
+                            <li class="lead">Attribute maxlength required or will not work.</li>
+                        </ol>
+                        <div id="doc_note"></div>
+                    </div>
+                </div>
+            </main>
+            <footer class="my-5 text-muted text-center text-small">
+                <a href="mailto:contato@restfulengine.com.br"><span style="color: rgb(18, 101, 146);">REST</span><span style="color: rgb(168, 68, 68)">ful</span><span style="color: rgb(128, 128, 128);">Engine</span></a>
+            </footer>
+        </div>
+        <script src="./assets/js/app.min.js"></script>
+    </body>
+</html>

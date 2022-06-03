@@ -1,0 +1,7 @@
+# These are some examples of commonly ignored file patterns.
+
+# Node artifact files
+node_modules/
+
+# JetBrains IDE
+.idea/

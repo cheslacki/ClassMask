@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demo</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <label>
+                <input class="demo_number" type="text">
+            </label>
+        </form>
+        <script src="./../../lib/jquery/jquery-3.6.0.min.js"></script>
+        <script src="./../../dist/class-mask.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                /*
+                 *  Any one of these parameters.
+                 *  number|stringToUpper|stringToName|email|date|phone
+                 *  cell|phoneAndCell|cpf|cnpj|cpfAndCnpj|zip
+                 *  money|fractionMedium|fractionFull
+                 */
+                $('.demo_number').on('keyup.demo_number', function () {
+                    $(this).val($(this).val().classMask('number'));
+                });
+            });
+        </script>
+    </body>
+</html>

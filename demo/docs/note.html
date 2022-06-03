@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demo</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form class="sheet-content">
+            <label class="note">
+                <textarea maxlength="200"></textarea>
+            </label>
+        </form>
+        <script src="./../../lib/jquery/jquery-3.6.0.min.js"></script>
+        <script src="./../../dist/class-mask-app.min.js"></script>
+        <script>
+            /*
+             *  This is optional
+             *  Default values config
+             */
+            ClassMask.setConfigNote({
+                /* Class for wrapper content */
+                className: 'sheet-content',
+                /* Style for grade feedback */
+                style: {
+                    position: 'absolute',
+                    bottom: '-22px',
+                    right: '8px',
+                    fontWeight: '600',
+                    color: '#888888'
+                }
+            });
+        </script>
+    </body>
+</html>
